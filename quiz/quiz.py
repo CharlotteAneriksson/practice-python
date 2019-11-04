@@ -7,6 +7,20 @@ def show_menu():
     return option
 
 
+def add_question():
+    print("")
+    question = input("Enter a question:\n ")
+
+    print("")
+    print("Ok then, tell me the answere")
+    answer = input("{0}\n ".format(question))
+
+    file = open('question.txt', 'a')
+    file.write(question + "\n")
+    file.write(answer + "\n")
+    file.close()
+
+
 print(show_menu())
 
 
@@ -16,7 +30,7 @@ def game_loop():
         if option == "1":
             print("You selected 'Ask question'")
         elif option == "2":
-            print("You selected 'Add question'")
+            add_question()
         elif option == "3":
             break
         else:
